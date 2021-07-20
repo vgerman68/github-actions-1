@@ -50,7 +50,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build1]  # Запустить после окончания выполнения Build1
     
-    steps: 
+    env:             # Переменные видны только внутри джоба build2
+      VAR1: "This is job level Variable1"
+      VAR2: "This is job level Variable2"
+
+steps: 
       - name: Run 1
         run:  echo "Hello World!"
 
@@ -62,5 +66,13 @@ jobs:
         run:  aws --version
 
       - name: Check exists zip
-        run:  zip
+        run:  zip --version
 
+      - name: Print variables
+        run: |
+          echo "Var1 = ${{ env.VAR1 }}"
+          echo "Var2 = ${{ env.VAR2 }}"
+          echo "LOCAL Var = $LOCAL_VAR"
+        env:             # Переменные видны только внутри шага "Print variables"
+          LOCAL_VAR: "This is step level Variable"
+    
