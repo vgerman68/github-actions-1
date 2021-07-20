@@ -1,7 +1,10 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
-
+env:
+  APPLICATION_NAME: "MyFlask"
+  PAKAGE_NAME:      "Flask_deploy_ver${{ github.sha }}" # Переменная github равна номеру commit
+  
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -25,9 +28,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Execute a few commands
+        run: |
+          echo Message 1
+          echo Message 2
+          echo Application name: ${{ env.APPLICATION_NAME }}
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -41,4 +46,7 @@ jobs:
     steps: 
       - name: Run 1
         run: echo "Hello World!"
+
+      - name: Deployment package
+        run: echo Deploy pakage name: ${{ env.PAKAGE_NAME }}
         
