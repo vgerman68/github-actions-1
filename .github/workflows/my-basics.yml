@@ -49,4 +49,5 @@ jobs:
         run:  echo "Hello World!"
 
       - name: Deployment package
-        run:  echo "Deploy pakage name ${{ env.PAKAGE_NAME }}"
+        run:  |
+          echo "Deploy pakage name: ${{ env.PAKAGE_NAME }}"
