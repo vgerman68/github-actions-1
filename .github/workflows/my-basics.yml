@@ -72,7 +72,7 @@ jobs:
         run: |
           echo "Var1 = ${{ env.VAR1 }}"
           echo "Var2 = ${{ env.VAR2 }}"
-          echo "LOCAL Var = $LOCAL_VAR"
+          echo "Var3 = $LOCAL_VAR"
         env:             # Переменные видны только внутри шага "Print variables"
           LOCAL_VAR: "This is step level Variable"
     
