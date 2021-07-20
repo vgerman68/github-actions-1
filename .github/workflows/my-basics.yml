@@ -46,7 +46,7 @@ jobs:
     
     steps: 
       - name: Run 1
-        run: echo "Hello World!"
+        run:  echo "Hello World!"
 
       - name: Deployment package
-        run: echo Deploy pakage name:${{ env.PAKAGE_NAME }}
+        run:  echo "Deploy pakage name ${{ env.PAKAGE_NAME }}"
