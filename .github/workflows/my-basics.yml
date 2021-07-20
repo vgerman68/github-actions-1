@@ -36,7 +36,7 @@ jobs:
           echo test, and deploy your project.
 
   build2: My command on Ubuntu Hello World!
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     
     steps: 
       - name: Run-1
