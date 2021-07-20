@@ -40,6 +40,9 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      - name: Clone git repository # Клонирование репозитория
+        uses: actions/checkout@v1
+
       - name: List current dir
         run:  ls -la
 
@@ -54,3 +57,10 @@ jobs:
       - name: Deployment package
         run:  |
           echo "Deploy pakage name: ${{ env.PAKAGE_NAME }}"
+
+      - name: Check exists aws
+        run:  aws --version
+
+      - name: Check exists zip
+        run:  zip
+
