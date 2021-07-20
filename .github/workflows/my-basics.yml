@@ -54,7 +54,7 @@ jobs:
       VAR1: "This is job level Variable1"
       VAR2: "This is job level Variable2"
 
-steps: 
+    steps: 
       - name: Run 1
         run:  echo "Hello World!"
 
