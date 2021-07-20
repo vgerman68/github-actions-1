@@ -37,7 +37,7 @@ jobs:
 
   build2: 
     runs-on: ubuntu-latest
-    
+    needs: build  # Запустить после окончания выполнения Build
     steps: 
       - name: Run 1
         run: echo "Hello World!"
