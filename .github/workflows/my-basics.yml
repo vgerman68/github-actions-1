@@ -39,7 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps: 
-      - name: Run-1
+      - name: Run 1
         run: echo "Hello World!"
         
-    runs-on: ubuntu:latest
