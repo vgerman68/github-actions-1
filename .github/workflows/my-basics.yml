@@ -3,7 +3,7 @@
 name: CI
 env:
   APPLICATION_NAME: "MyFlask"
-  PAKAGE_NAME:      "Flask_deploy_ver${{ github.sha }}" # Переменная github равна номеру commit
+  PAKAGE_NAME:      "Flask_deploy_ver ${{ github.sha }}" # Переменная github равна номеру commit
   
 # Controls when the workflow will run
 on:
@@ -43,10 +43,10 @@ jobs:
   build2: 
     runs-on: ubuntu-latest
     needs: [build1]  # Запустить после окончания выполнения Build1
+    
     steps: 
       - name: Run 1
         run: echo "Hello World!"
 
       - name: Deployment package
-        run: echo Deploy pakage name: ${{ env.PAKAGE_NAME }}
-        
+        run: echo Deploy pakage name:${{ env.PAKAGE_NAME }}
