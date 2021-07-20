@@ -40,6 +40,9 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      - name: List current dir
+        run:  ls -la
+
   build2: 
     runs-on: ubuntu-latest
     needs: [build1]  # Запустить после окончания выполнения Build1
